@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator JS - Dhito</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        
+        <div class="calculator-card">
+            
+            <div class="display-container">
+                <div class="history-display" id="historyDisplay"></div>
+                <input type="text" class="main-display" id="mainDisplay" value="0" readonly>
+            </div>
+
+            <div class="memory-keys">
+                <button onclick="memoryClear()">MC</button>
+                <button onclick="memoryRecall()">MR</button>
+                <button onclick="memoryPlus()">M+</button>
+                <button onclick="memoryMinus()">M-</button>
+            </div>
+
+            <div class="keys-grid">
+                <button class="op-btn" onclick="clearEntry()">CE</button>
+                <button class="op-btn" onclick="clearDisplay()">C</button>
+                <button class="op-btn" onclick="deleteDigit()">⌫</button>
+                <button class="op-btn operator" onclick="setOperator('/')">÷</button>
+
+                <button onclick="appendNumber('7')">7</button>
+                <button onclick="appendNumber('8')">8</button>
+                <button onclick="appendNumber('9')">9</button>
+                <button class="op-btn operator" onclick="setOperator('*')">×</button>
+
+                <button onclick="appendNumber('4')">4</button>
+                <button onclick="appendNumber('5')">5</button>
+                <button onclick="appendNumber('6')">6</button>
+                <button class="op-btn operator" onclick="setOperator('-')">-</button>
+
+                <button onclick="appendNumber('1')">1</button>
+                <button onclick="appendNumber('2')">2</button>
+                <button onclick="appendNumber('3')">3</button>
+                <button class="op-btn operator" onclick="setOperator('+')">+</button>
+
+                <button class="zero-btn" onclick="appendNumber('0')">0</button>
+                <button onclick="appendDecimal()">.</button>
+                <button class="equal-btn" onclick="calculateResult()">=</button>
+            </div>
+        </div>
+
+        <div class="history-card">
+            <div class="history-header">
+                <h3>Riwayat</h3>
+                <button onclick="clearHistory()" class="clear-history-btn">Hapus</button>
+            </div>
+            <ul id="historyList">
+                <li class="empty-msg">Belum ada perhitungan</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
